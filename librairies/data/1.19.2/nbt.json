@@ -1,0 +1,26 @@
+{
+	"a_index": [
+		"NoAI",
+		"NoGravity",
+		"HandItems",
+		"ArmorItems",
+		"HandDropItems",
+		"ArmorDropItems",
+		"Invulnerable",
+		"Invisible",
+		"Small",
+		"isBaby"
+	],
+	"a_data": [
+		"@bool",
+		"@bool",
+		"@list-n-2",
+		"@list-n-4",
+		"@list-f-2",
+		"@list-f-4",
+		"@bool",
+		"@bool",
+		"@bool",
+		"@bool"
+	]
+}

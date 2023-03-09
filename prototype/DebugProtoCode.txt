@@ -1,0 +1,48 @@
+##################################
+debug_commands.json:
+
+{
+	index: {
+		"name": text_in_command,
+		"next": [
+			argument_1[index_or_selector, can have modificator],
+			argument_2[]
+		]
+	}
+}
+
+##################################
+DEBUG ALGORYTHM
+
+- for each line of the file
+
+tranform line into array (kill space)
+
+#begin from "null" index
+
+#begin
+if "name" for index good
+	for each argument of index
+		for each option in argument
+			if option is_index (see optionnal)
+				#begin option
+			else if option is_selector
+				check selector
+			
+			if option not good
+				set error in option with priority increment
+		if argument not good
+			set error in option with priority increment
+	if error without good exit
+		return error with high priority
+	else
+		return good
+else
+	return error with priority increment
+
+if #begin error
+	display error
+else
+	debug next line
+
+##################################

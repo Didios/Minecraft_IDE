@@ -1,0 +1,12 @@
+- debugger
+- create/open/save project
+- see project architecture (in file)
+- open/edit/save file
+- file >> sound, texture, lang, structure, mcfunction, etc.
+- auto-completion
+- ajout fichier
+- configure minecraft tag tick/load
+
+- make on c#
+- storage command on json
+- storage basic data on json

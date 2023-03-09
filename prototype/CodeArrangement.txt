@@ -1,0 +1,34 @@
+TYPE
+"Class"
+function()
+variable
+
+########################################################################################
+
+lineToList(STRING line) >> LIST<STRING>
+
+"CheckResult"
+{
+	BOOL result, 
+	STRING reason, 
+	INT step
+}
+checkSpecial(STRING structure, LIST<STRING> values, STRING before="") >> "CheckResult"
+
+"Data"
+{
+	STRING version,
+	JSON command,
+	JSON dataFile,
+	importData(),
+	changeVersion(STRING newVersion)
+}
+
+"DebugResult"
+{
+	BOOL result, 
+	STRING reason, 
+	operator="CheckResult"("CheckResult")
+}
+debugLine(LIST<STRING> args, JSON data, STRING index="null") >> "DebugResult"
+debugFile(LIST<STRING> file) >> "DebugResult"
