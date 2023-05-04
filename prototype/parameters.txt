@@ -1,0 +1,12 @@
+NBT:
+    view type >> 'voxel', 'opengl' >> change in main to make when display nbt
+
+SOUND:
+    play on open >> bool >> audioplayer.Player.PLAY_ON_OPEN
+    line width >> int >> audioplayer.Player.LINE_WIDTH
+    line count >> int >> audioplayer.Waveform.bar_count
+    line max db >> int >> audioplayer.Waveform.db_ceiling
+
+MCFUNCTION:
+    auto debug >> bool >> editor.editor.AUTO_CHECK
+    debug on open >> bool >> change in main to when file open

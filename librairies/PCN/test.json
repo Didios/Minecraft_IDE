@@ -1,0 +1,1405 @@
+{
+  "<abilities>": {
+    "flySpeed": {
+      "type": "float"
+    },
+    "flying": {
+      "type": "byte"
+    },
+    "instabuild": {
+      "type": "byte"
+    },
+    "invulnerable": {
+      "type": "byte"
+    },
+    "mayBuild": {
+      "type": "byte"
+    },
+    "mayfly": {
+      "type": "byte"
+    },
+    "walkSpeed": {
+      "type": "float"
+    }
+  },
+  "<attributemodifiers>": {
+    "Amount": {
+      "type": "double"
+    },
+    "AttributeName": {
+      "type": "string"
+    },
+    "Name": {
+      "type": "string"
+    },
+    "Operation": {
+      "type": "int"
+    },
+    "Slot": {
+      "type": "string"
+    },
+    "UUIDLeast": {
+      "type": "long"
+    },
+    "UUIDMost": {
+      "type": "long"
+    }
+  },
+  "<attributes>": {
+    "Base": {
+      "type": "double"
+    },
+    "Modifiers": {
+      "count": 0,
+      "subtype": "<attributemodifiers>",
+      "type": "list"
+    },
+    "Name": {
+      "type": "string"
+    }
+  },
+  "<beamtarget>": {
+    "X": {
+      "type": "int"
+    },
+    "Y": {
+      "type": "int"
+    },
+    "Z": {
+      "type": "int"
+    }
+  },
+  "<block>": {
+    "Age": {
+      "type": "long"
+    },
+    "Base": {
+      "type": "int"
+    },
+    "BrewTime": {
+      "type": "short"
+    },
+    "BurnTime": {
+      "type": "short"
+    },
+    "Command": {
+      "type": "string"
+    },
+    "CommandStats": {
+      "type": "<commandstats>"
+    },
+    "CookTime": {
+      "type": "short"
+    },
+    "CookTimeTotal": {
+      "type": "short"
+    },
+    "CustomName": {
+      "type": "string"
+    },
+    "Data": {
+      "type": "int"
+    },
+    "Delay": {
+      "type": "short"
+    },
+    "ExactTeleport": {
+      "type": "byte"
+    },
+    "ExitPortal": {
+      "type": "<exitportal>"
+    },
+    "ExtraType": {
+      "type": "string"
+    },
+    "Fuel": {
+      "type": "byte"
+    },
+    "Item": {
+      "type": "int"
+    },
+    "Items": {
+      "count": 0,
+      "subtype": "<item>",
+      "type": "list"
+    },
+    "LastOutput": {
+      "type": "string"
+    },
+    "Levels": {
+      "type": "int"
+    },
+    "Lock": {
+      "type": "string"
+    },
+    "LootTable": {
+      "type": "string"
+    },
+    "LootTableSeed": {
+      "type": "long"
+    },
+    "MaxNearbyEntities": {
+      "type": "short"
+    },
+    "MaxSpawnDelay": {
+      "type": "short"
+    },
+    "MinSpawnDelay": {
+      "type": "short"
+    },
+    "OutputSignal": {
+      "type": "int"
+    },
+    "Owner": {
+      "type": "<owner>"
+    },
+    "Patterns": {
+      "count": 0,
+      "subtype": "<patterns>",
+      "type": "list"
+    },
+    "Primary": {
+      "type": "int"
+    },
+    "Record": {
+      "type": "int"
+    },
+    "RecordItem": {
+      "type": "<item>"
+    },
+    "RequiredPlayerRange": {
+      "type": "short"
+    },
+    "Rot": {
+      "type": "byte"
+    },
+    "Secondary": {
+      "type": "int"
+    },
+    "SkullType": {
+      "type": "byte"
+    },
+    "SpawnCount": {
+      "type": "short"
+    },
+    "SpawnData": {
+      "type": "<entity>"
+    },
+    "SpawnPotentials": {
+      "count": 0,
+      "subtype": "<spawnpotentials>",
+      "type": "list"
+    },
+    "SpawnRange": {
+      "type": "short"
+    },
+    "SuccessCount": {
+      "type": "int"
+    },
+    "Text1": {
+      "type": "string"
+    },
+    "Text2": {
+      "type": "string"
+    },
+    "Text3": {
+      "type": "string"
+    },
+    "Text4": {
+      "type": "string"
+    },
+    "TrackOutput": {
+      "type": "byte"
+    },
+    "TransferCooldown": {
+      "type": "int"
+    },
+    "author": {
+      "type": "string"
+    },
+    "auto": {
+      "type": "byte"
+    },
+    "blockData": {
+      "type": "int"
+    },
+    "blockId": {
+      "type": "int"
+    },
+    "conditionMet": {
+      "type": "byte"
+    },
+    "extending": {
+      "type": "byte"
+    },
+    "facing": {
+      "type": "int"
+    },
+    "id": {
+      "type": "string"
+    },
+    "ignoreEntities": {
+      "type": "byte"
+    },
+    "integrity": {
+      "type": "float"
+    },
+    "metadata": {
+      "type": "string"
+    },
+    "mirror": {
+      "type": "string"
+    },
+    "mode": {
+      "type": "string"
+    },
+    "name": {
+      "type": "string"
+    },
+    "note": {
+      "type": "byte"
+    },
+    "posX": {
+      "type": "int"
+    },
+    "posY": {
+      "type": "int"
+    },
+    "posZ": {
+      "type": "int"
+    },
+    "powered": {
+      "type": "byte"
+    },
+    "progress": {
+      "type": "float"
+    },
+    "rotation": {
+      "type": "string"
+    },
+    "seed": {
+      "type": "long"
+    },
+    "showair": {
+      "type": "byte"
+    },
+    "showboundingbox": {
+      "type": "byte"
+    },
+    "sizeX": {
+      "type": "int"
+    },
+    "sizeY": {
+      "type": "int"
+    },
+    "sizeZ": {
+      "type": "int"
+    },
+    "x": {
+      "type": "int"
+    },
+    "y": {
+      "type": "int"
+    },
+    "z": {
+      "type": "int"
+    }
+  },
+  "<commandstats>": {
+    "AffectedBlocksName": {
+      "type": "string"
+    },
+    "AffectedBlocksObjective": {
+      "type": "string"
+    },
+    "AffectedEntitiesName": {
+      "type": "string"
+    },
+    "AffectedEntitiesObjective": {
+      "type": "string"
+    },
+    "AffectedItemsName": {
+      "type": "string"
+    },
+    "AffectedItemsObjective": {
+      "type": "string"
+    },
+    "CommandStats": {
+      "type": "<commandstats>"
+    },
+    "QueryResultName": {
+      "type": "string"
+    },
+    "QueryResultObjective": {
+      "type": "string"
+    },
+    "SuccessCountName": {
+      "type": "string"
+    },
+    "SuccessCountObjective": {
+      "type": "string"
+    }
+  },
+  "<custompotioneffects>": {
+    "Ambient": {
+      "type": "byte"
+    },
+    "Amplifier": {
+      "type": "byte"
+    },
+    "Duration": {
+      "type": "int"
+    },
+    "Id": {
+      "type": "byte"
+    },
+    "ShowParticles": {
+      "type": "byte"
+    }
+  },
+  "<decorations>": {
+    "id": {
+      "type": "string"
+    },
+    "rot": {
+      "type": "double"
+    },
+    "type": {
+      "type": "byte"
+    },
+    "x": {
+      "type": "double"
+    },
+    "z": {
+      "type": "double"
+    }
+  },
+  "<display>": {
+    "Lore": {
+      "count": 0,
+      "subtype": "string",
+      "type": "list"
+    },
+    "Name": {
+      "type": "string"
+    },
+    "color": {
+      "type": "int"
+    }
+  },
+  "<ench>": {
+    "id": {
+      "type": "short"
+    },
+    "lvl": {
+      "type": "short"
+    }
+  },
+  "<entity>": {
+    "APX": {
+      "type": "int"
+    },
+    "APY": {
+      "type": "int"
+    },
+    "APZ": {
+      "type": "int"
+    },
+    "AbsorptionAmount": {
+      "type": "float"
+    },
+    "ActiveEffects": {
+      "count": 0,
+      "subtype": "<custompotioneffects>",
+      "type": "list"
+    },
+    "Age": {
+      "type": "short"
+    },
+    "Air": {
+      "type": "short"
+    },
+    "Anger": {
+      "type": "short"
+    },
+    "Angry": {
+      "type": "byte"
+    },
+    "ArmorDropChances": {
+      "count": 4,
+      "subtype": "float",
+      "type": "list"
+    },
+    "ArmorItem": {
+      "type": "<item>"
+    },
+    "ArmorItems": {
+      "count": 4,
+      "subtype": "<item>",
+      "type": "list"
+    },
+    "AttachFace": {
+      "type": "byte"
+    },
+    "Attributes": {
+      "count": 0,
+      "subtype": "<attributes>",
+      "type": "list"
+    },
+    "BatFlags": {
+      "type": "byte"
+    },
+    "BeamTarget": {
+      "type": "<beamtarget>"
+    },
+    "Block": {
+      "type": "string"
+    },
+    "Bred": {
+      "type": "byte"
+    },
+    "CanBreakDoors": {
+      "type": "byte"
+    },
+    "CanPickUpLoot": {
+      "type": "byte"
+    },
+    "Career": {
+      "type": "int"
+    },
+    "CareerLevel": {
+      "type": "int"
+    },
+    "CatType": {
+      "type": "int"
+    },
+    "ChestedHorse": {
+      "type": "byte"
+    },
+    "CollarColor": {
+      "type": "byte"
+    },
+    "Color": {
+      "type": "byte"
+    },
+    "Command": {
+      "type": "string"
+    },
+    "CommandStats": {
+      "type": "<commandstats>"
+    },
+    "ConversionTime": {
+      "type": "int"
+    },
+    "CustomDisplayTile": {
+      "type": "byte"
+    },
+    "CustomName": {
+      "type": "string"
+    },
+    "CustomNameVisible": {
+      "type": "byte"
+    },
+    "CustomPotionEffects": {
+      "count": 0,
+      "subtype": "<custompotioneffects>",
+      "type": "list"
+    },
+    "Data": {
+      "type": "byte"
+    },
+    "DataVersion": {
+      "type": "int"
+    },
+    "DeathLootTable": {
+      "type": "string"
+    },
+    "DeathLootTableSeed": {
+      "type": "long"
+    },
+    "DeathTime": {
+      "type": "short"
+    },
+    "Delay": {
+      "type": "short"
+    },
+    "Dimension": {
+      "type": "int"
+    },
+    "Dir": {
+      "type": "int"
+    },
+    "DisabledSlots": {
+      "type": "int"
+    },
+    "DisplayData": {
+      "type": "int"
+    },
+    "DisplayOffset": {
+      "type": "int"
+    },
+    "DisplayTile": {
+      "type": "int"
+    },
+    "DragonPhase": {
+      "type": "int"
+    },
+    "DropItem": {
+      "type": "byte"
+    },
+    "Duration": {
+      "type": "int"
+    },
+    "DurationOnUse": {
+      "type": "int"
+    },
+    "EatingHaystack": {
+      "type": "byte"
+    },
+    "Effects": {
+      "count": 0,
+      "subtype": "<custompotioneffects>",
+      "type": "list"
+    },
+    "EggLayTime": {
+      "type": "int"
+    },
+    "Enabled": {
+      "type": "byte"
+    },
+    "EnderItems": {
+      "count": 0,
+      "subtype": "<item>",
+      "type": "list"
+    },
+    "ExplosionPower": {
+      "type": "int"
+    },
+    "ExplosionRadius": {
+      "type": "byte"
+    },
+    "Facing": {
+      "type": "byte"
+    },
+    "FallDistance": {
+      "type": "float"
+    },
+    "FallFlying": {
+      "type": "byte"
+    },
+    "FallHurtAmount": {
+      "type": "float"
+    },
+    "FallHurtMax": {
+      "type": "int"
+    },
+    "Fire": {
+      "type": "short"
+    },
+    "FireworksItem": {
+      "type": "<item>"
+    },
+    "ForcedAge": {
+      "type": "int"
+    },
+    "Fuel": {
+      "type": "short"
+    },
+    "Fuse": {
+      "type": "short"
+    },
+    "Glowing": {
+      "type": "byte"
+    },
+    "HandDropChances": {
+      "count": 2,
+      "subtype": "float",
+      "type": "list"
+    },
+    "HandItems": {
+      "count": 2,
+      "subtype": "<item>",
+      "type": "list"
+    },
+    "Health": {
+      "type": "float|short"
+    },
+    "HurtBy": {
+      "type": "string"
+    },
+    "HurtByTimestamp": {
+      "type": "int"
+    },
+    "HurtEntities": {
+      "type": "byte"
+    },
+    "HurtTime": {
+      "type": "short"
+    },
+    "InLove": {
+      "type": "int"
+    },
+    "Inventory": {
+      "count": 0,
+      "subtype": "<item>",
+      "type": "list"
+    },
+    "Invisible": {
+      "type": "byte"
+    },
+    "Invul": {
+      "type": "int"
+    },
+    "Invulnerable": {
+      "type": "byte"
+    },
+    "IsBaby": {
+      "type": "byte"
+    },
+    "IsChickenJockey": {
+      "type": "byte"
+    },
+    "Item": {
+      "type": "<item>"
+    },
+    "ItemDropChance": {
+      "type": "float"
+    },
+    "ItemRotation": {
+      "type": "byte"
+    },
+    "Items": {
+      "count": 0,
+      "subtype": "<item>",
+      "type": "list"
+    },
+    "LastOutput": {
+      "type": "string"
+    },
+    "Leash": {
+      "type": "<leash>"
+    },
+    "Leashed": {
+      "type": "byte"
+    },
+    "LeftHanded": {
+      "type": "byte"
+    },
+    "Life": {
+      "type": "int"
+    },
+    "LifeTime": {
+      "type": "int"
+    },
+    "Lifetime": {
+      "type": "int"
+    },
+    "LootTable": {
+      "type": "string"
+    },
+    "LootTableSeed": {
+      "type": "long"
+    },
+    "Marker": {
+      "type": "byte"
+    },
+    "MaxNearbyEntities": {
+      "type": "short"
+    },
+    "MaxSpawnDelay": {
+      "type": "short"
+    },
+    "MinSpawnDelay": {
+      "type": "short"
+    },
+    "MoreCarrotTicks": {
+      "type": "int"
+    },
+    "Motion": {
+      "count": 3,
+      "subtype": "double",
+      "type": "list"
+    },
+    "Motive": {
+      "type": "string"
+    },
+    "NoAI": {
+      "type": "byte"
+    },
+    "NoBasePlate": {
+      "type": "byte"
+    },
+    "NoGravity": {
+      "type": "byte"
+    },
+    "Offers": {
+      "type": "<offers>"
+    },
+    "OnGround": {
+      "type": "byte"
+    },
+    "Owner": {
+      "type": "string"
+    },
+    "OwnerUUID": {
+      "type": "string"
+    },
+    "OwnerUUIDLeast": {
+      "type": "long"
+    },
+    "OwnerUUIDMost": {
+      "type": "long"
+    },
+    "Particle": {
+      "type": "string"
+    },
+    "ParticleParam1": {
+      "type": "int"
+    },
+    "ParticleParam2": {
+      "type": "int"
+    },
+    "Passengers": {
+      "count": 0,
+      "subtype": "<entity>",
+      "type": "list"
+    },
+    "Peek": {
+      "type": "byte"
+    },
+    "PersistenceRequired": {
+      "type": "byte"
+    },
+    "PickupDelay": {
+      "type": "short"
+    },
+    "PlayerCreated": {
+      "type": "byte"
+    },
+    "PlayerSpawned": {
+      "type": "byte"
+    },
+    "PortalCooldown": {
+      "type": "int"
+    },
+    "Pos": {
+      "count": 3,
+      "subtype": "double",
+      "type": "list"
+    },
+    "Pose": {
+      "type": "<pose>"
+    },
+    "Potion": {
+      "type": "string"
+    },
+    "Profession": {
+      "type": "int"
+    },
+    "PushX": {
+      "type": "double"
+    },
+    "PushZ": {
+      "type": "double"
+    },
+    "RabbitType": {
+      "type": "int"
+    },
+    "Radius": {
+      "type": "float"
+    },
+    "RadiusOnUse": {
+      "type": "float"
+    },
+    "RadiusPerTick": {
+      "type": "float"
+    },
+    "ReapplicationDelay": {
+      "type": "int"
+    },
+    "RequiredPlayerRange": {
+      "type": "short"
+    },
+    "Riches": {
+      "type": "int"
+    },
+    "RootVehicle": {
+      "type": "<rootvehicle>"
+    },
+    "Rotation": {
+      "count": 2,
+      "subtype": "float",
+      "type": "list"
+    },
+    "Saddle": {
+      "type": "byte"
+    },
+    "SaddleItem": {
+      "type": "<item>"
+    },
+    "Score": {
+      "type": "int"
+    },
+    "SelectedItem": {
+      "type": "<item>"
+    },
+    "SelectedItemSlot": {
+      "type": "int"
+    },
+    "Sheared": {
+      "type": "byte"
+    },
+    "ShowArms": {
+      "type": "byte"
+    },
+    "ShowBottom": {
+      "type": "byte"
+    },
+    "Silent": {
+      "type": "byte"
+    },
+    "Sitting": {
+      "type": "byte"
+    },
+    "Size": {
+      "type": "int"
+    },
+    "SkeletonTrap": {
+      "type": "byte"
+    },
+    "SkeletonTrapTime": {
+      "type": "int"
+    },
+    "SleepTimer": {
+      "type": "short"
+    },
+    "Sleeping": {
+      "type": "byte"
+    },
+    "Small": {
+      "type": "byte"
+    },
+    "SpawnCount": {
+      "type": "short"
+    },
+    "SpawnData": {
+      "type": "<entity>"
+    },
+    "SpawnForced": {
+      "type": "byte"
+    },
+    "SpawnPotentials": {
+      "count": 0,
+      "subtype": "<spawnpotentials>",
+      "type": "list"
+    },
+    "SpawnRange": {
+      "type": "short"
+    },
+    "SpawnX": {
+      "type": "int"
+    },
+    "SpawnY": {
+      "type": "int"
+    },
+    "SpawnZ": {
+      "type": "int"
+    },
+    "Steps": {
+      "type": "int"
+    },
+    "SuccessCount": {
+      "type": "int"
+    },
+    "TNTFuse": {
+      "type": "int"
+    },
+    "TXD": {
+      "type": "double"
+    },
+    "TYD": {
+      "type": "double"
+    },
+    "TZD": {
+      "type": "double"
+    },
+    "Tags": {
+      "count": 0,
+      "subtype": "string",
+      "type": "list"
+    },
+    "Tame": {
+      "type": "byte"
+    },
+    "Target": {
+      "type": "<target>"
+    },
+    "Team": {
+      "type": "string"
+    },
+    "Temper": {
+      "type": "int"
+    },
+    "Thrower": {
+      "type": "string"
+    },
+    "Tile": {
+      "type": "byte"
+    },
+    "TileEntityData": {
+      "type": "<block>"
+    },
+    "TileID": {
+      "type": "int"
+    },
+    "TileX": {
+      "type": "int"
+    },
+    "TileY": {
+      "type": "int"
+    },
+    "TileZ": {
+      "type": "int"
+    },
+    "Time": {
+      "type": "int"
+    },
+    "TrackOutput": {
+      "type": "byte"
+    },
+    "TransferCooldown": {
+      "type": "int"
+    },
+    "Type": {
+      "type": "string"
+    },
+    "UUIDLeast": {
+      "type": "long"
+    },
+    "UUIDMost": {
+      "type": "long"
+    },
+    "Value": {
+      "type": "short"
+    },
+    "Variant": {
+      "type": "int"
+    },
+    "WaitTime": {
+      "type": "int"
+    },
+    "Willing": {
+      "type": "byte"
+    },
+    "XpLevel": {
+      "type": "int"
+    },
+    "XpP": {
+      "type": "float"
+    },
+    "XpSeed": {
+      "type": "int"
+    },
+    "XpTotal": {
+      "type": "int"
+    },
+    "abilities": {
+      "type": "<abilities>"
+    },
+    "carried": {
+      "type": "short"
+    },
+    "carriedData": {
+      "type": "short"
+    },
+    "damage": {
+      "type": "double"
+    },
+    "direction": {
+      "count": 3,
+      "subtype": "double",
+      "type": "list"
+    },
+    "foodExhaustionLevel": {
+      "type": "float"
+    },
+    "foodLevel": {
+      "type": "int"
+    },
+    "foodSaturationLevel": {
+      "type": "float"
+    },
+    "foodTickTimer": {
+      "type": "int"
+    },
+    "id": {
+      "type": "string"
+    },
+    "ignited": {
+      "type": "byte"
+    },
+    "inData": {
+      "type": "byte"
+    },
+    "inGround": {
+      "type": "byte"
+    },
+    "inTile": {
+      "type": "byte"
+    },
+    "life": {
+      "type": "short"
+    },
+    "ownerName": {
+      "type": "string"
+    },
+    "pickup": {
+      "type": "byte"
+    },
+    "player": {
+      "type": "byte"
+    },
+    "playerGameType": {
+      "type": "int"
+    },
+    "power": {
+      "count": 3,
+      "subtype": "double",
+      "type": "list"
+    },
+    "powered": {
+      "type": "byte"
+    },
+    "shake": {
+      "type": "byte"
+    },
+    "wasOnGround": {
+      "type": "byte"
+    },
+    "xTile": {
+      "type": "int"
+    },
+    "yTile": {
+      "type": "int"
+    },
+    "zTile": {
+      "type": "int"
+    }
+  },
+  "<exitportal>": {
+    "X": {
+      "type": "int"
+    },
+    "Y": {
+      "type": "int"
+    },
+    "Z": {
+      "type": "int"
+    }
+  },
+  "<explosion>": {
+    "Colors": {
+      "type": "int array"
+    },
+    "FadeColors": {
+      "type": "int array"
+    },
+    "Flicker": {
+      "type": "byte"
+    },
+    "Trail": {
+      "type": "byte"
+    },
+    "Type": {
+      "type": "byte"
+    }
+  },
+  "<fireworks>": {
+    "Explosions": {
+      "count": 0,
+      "subtype": "<explosion>",
+      "type": "list"
+    },
+    "Flight": {
+      "type": "byte"
+    }
+  },
+  "<item>": {
+    "Count": {
+      "type": "byte"
+    },
+    "Damage": {
+      "type": "short"
+    },
+    "Slot": {
+      "type": "byte"
+    },
+    "id": {
+      "type": "string"
+    },
+    "tag": {
+      "type": "<tag>"
+    }
+  },
+  "<leash>": {
+    "UUIDLeast": {
+      "type": "long"
+    },
+    "UUIDMost": {
+      "type": "long"
+    },
+    "X": {
+      "type": "int"
+    },
+    "Y": {
+      "type": "int"
+    },
+    "Z": {
+      "type": "int"
+    }
+  },
+  "<offers>": {
+    "Recipes": {
+      "count": 0,
+      "subtype": "<recipes>",
+      "type": "list"
+    }
+  },
+  "<owner>": {
+    "L": {
+      "type": "long"
+    },
+    "M": {
+      "type": "long"
+    },
+    "X": {
+      "type": "int"
+    },
+    "Y": {
+      "type": "int"
+    },
+    "Z": {
+      "type": "int"
+    }
+  },
+  "<patterns>": {
+    "Color": {
+      "type": "int"
+    },
+    "Pattern": {
+      "type": "string"
+    }
+  },
+  "<pose>": {
+    "Body": {
+      "count": 3,
+      "subtype": "float",
+      "type": "list"
+    },
+    "Head": {
+      "count": 3,
+      "subtype": "float",
+      "type": "list"
+    },
+    "LeftArm": {
+      "count": 3,
+      "subtype": "float",
+      "type": "list"
+    },
+    "LeftLeg": {
+      "count": 3,
+      "subtype": "float",
+      "type": "list"
+    },
+    "RightArm": {
+      "count": 3,
+      "subtype": "float",
+      "type": "list"
+    },
+    "RightLeg": {
+      "count": 3,
+      "subtype": "float",
+      "type": "list"
+    }
+  },
+  "<properties>": {
+    "textures": {
+      "count": 0,
+      "subtype": "<textures>",
+      "type": "list"
+    }
+  },
+  "<recipes>": {
+    "buy": {
+      "type": "<item>"
+    },
+    "buyB": {
+      "type": "<item>"
+    },
+    "maxUses": {
+      "type": "int"
+    },
+    "rewardExp": {
+      "type": "byte"
+    },
+    "sell": {
+      "type": "<item>"
+    },
+    "uses": {
+      "type": "int"
+    }
+  },
+  "<rootvehicle>": {
+    "AttachLeast": {
+      "type": "long"
+    },
+    "AttachMost": {
+      "type": "long"
+    },
+    "Entity": {
+      "type": "<entity>"
+    }
+  },
+  "<skullowner>": {
+    "Name": {
+      "type": "string"
+    },
+    "Id": {
+      "type": "string"
+    },
+    "Properties": {
+      "type": "<properties>"
+    }
+  },
+  "<spawnpotentials>": {
+    "Entity": {
+      "type": "<entity>"
+    },
+    "Weight": {
+      "type": "int"
+    }
+  },
+  "<storedenchantments>": {
+    "id": {
+      "type": "short"
+    },
+    "lvl": {
+      "type": "short"
+    }
+  },
+  "<tag>": {
+    "AttributeModifiers": {
+      "count": 0,
+      "subtype": "<attributemodifiers>",
+      "type": "list"
+    },
+    "BlockEntityTag": {
+      "type": "<block>"
+    },
+    "CanDestroy": {
+      "count": 0,
+      "subtype": "string",
+      "type": "list"
+    },
+    "CanPlaceOn": {
+      "count": 0,
+      "subtype": "string",
+      "type": "list"
+    },
+    "CustomPotionEffects": {
+      "count": 0,
+      "subtype": "<custompotioneffects>",
+      "type": "list"
+    },
+    "Decorations": {
+      "count": 0,
+      "subtype": "<decorations>",
+      "type": "list"
+    },
+    "EntityTag": {
+      "type": "<entity>"
+    },
+    "Explosion": {
+      "type": "<explosion>"
+    },
+    "Fireworks": {
+      "type": "<fireworks>"
+    },
+    "HideFlags": {
+      "type": "int"
+    },
+    "Potion": {
+      "type": "string"
+    },
+    "RepairCost": {
+      "type": "int"
+    },
+    "SkullOwner": {
+      "type": "<skullowner>"
+    },
+    "StoredEnchantments": {
+      "count": 0,
+      "subtype": "<storedenchantments>",
+      "type": "list"
+    },
+    "Unbreakable": {
+      "type": "byte"
+    },
+    "author": {
+      "type": "string"
+    },
+    "display": {
+      "type": "<display>"
+    },
+    "ench": {
+      "count": 0,
+      "subtype": "<ench>",
+      "type": "list"
+    },
+    "generation": {
+      "type": "int"
+    },
+    "map_scale_direction": {
+      "type": "int"
+    },
+    "map_tracking_position": {
+      "type": "byte"
+    },
+    "pages": {
+      "count": 0,
+      "subtype": "string",
+      "type": "list"
+    },
+    "resolved": {
+      "type": "byte"
+    },
+    "title": {
+      "type": "string"
+    }
+  },
+  "<target>": {
+    "L": {
+      "type": "long"
+    },
+    "M": {
+      "type": "long"
+    },
+    "X": {
+      "type": "int"
+    },
+    "Y": {
+      "type": "int"
+    },
+    "Z": {
+      "type": "int"
+    }
+  },
+  "<textures>": {
+    "Signature": {
+      "type": "string"
+    },
+    "Value": {
+      "type": "string"
+    }
+  }
+}

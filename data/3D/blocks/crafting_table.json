@@ -1,0 +1,11 @@
+{
+	"model": "cube.json",
+	"palette": [
+		"crafting_table_top.png",
+		"oak_planks.png",
+		"crafting_table_front.png",
+		"crafting_table_front.png",
+		"crafting_table_side.png",
+		"crafting_table_side.png"
+	]
+}

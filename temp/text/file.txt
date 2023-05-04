@@ -1,0 +1,3 @@
+this is a .txt test file
+
+i think it is not too bad and it does a pretty good job for a simple text editor
