@@ -1,12 +1,40 @@
-- debugger
-- create/open/save project
-- see project architecture (in file)
-- open/edit/save file
-- file >> sound, texture, lang, structure, mcfunction, etc.
-- auto-completion
-- ajout fichier
-- configure minecraft tag tick/load
+##### FINISH
+~~~~~ IN PROGRESS
 
-- make on c#
-- storage command on json
-- storage basic data on json
+ARCHITECTURE:
+##### only one result class
+##### parent class for all editors (that is in a frame)
+
+EDITOR:
+##### .nbt 3d renderer
+##### .ogg sound viewer
+##### .txt
+##### .mcfunction
+##### .png
+    .json editor >> .mcmeta
+    .lang file
+    file editor auto-completion
+##### default editor to open file
+
+PROJECT:
+##### open >> save precedent project, file dialog to choose root file, detect if datapack (with .mcmeta)
+##### create >> save precedent project, file dialog to choose location, create base directory with pack.mcmeta and pack.png
+##### add file >> choose type and location, open it
+
+PARAMETERS:
+##### audio_player:
+#####   PLAY_ON_OPEN
+#####   LINE_WIDTH
+#####   bar_count
+#####   db_ceiling
+mcfunction:
+#####   AUTO_CHECK
+	change version
+##### paint:
+#####   DEFAULT_BG
+    ? colors ?
+    ? font ?
+    ? reset param button for each if modified ?
+
+DEBUGGER:
+    tag debugger, see /prototype/Tag.xlsx

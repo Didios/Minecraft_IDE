@@ -2,25 +2,30 @@
 # Name:        dataLoader
 # Purpose:     contain all minecraft data for a version give
 #
-# Author:      Elève
+# Author:      Didier Mathis
 #
 # Created:     24/12/2022
-# Copyright:   (c) Elève 2022
-# Licence:     <your licence>
 #-------------------------------------------------------------------------------
 
 import json
 import os.path as path
 
 class data:
+    DATA_PATH = path.join(path.dirname(__file__), 'data')
+
     def __init__(self, version):
         self.data = {}
         self.version = version
         #self.load_all()
 
+    def set_data_path(self, dirpath):
+        self.DATA_PATH = dirpath
+        self.data = {}
+
     def load(self, filename):
-        file = open(path.join(path.dirname(__file__), 'data', self.version, '%s.json' %(filename)))
+        file = open(path.join(self.DATA_PATH, 'command', self.version, '%s.json' %(filename)))
         self.data[filename] = json.load(file)
+
         file.close()
 
     def load_all(self):
