@@ -34,7 +34,7 @@ class debug:
         if text[0] == '/':
             text = text[1::]
 
-        newarg = True
+        newarg = True;
         i = 0
         textlen = len(text)
         while i < textlen:
