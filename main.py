@@ -7,10 +7,11 @@
 # -------------------------------------------------------------------------------
 
 # tkinter
-from tkinter import Tk, Menu, Toplevel, BooleanVar, Label, Entry, Checkbutton, Button, IntVar
+from tkinter import Tk, Menu, Toplevel, BooleanVar, Label, Entry, Checkbutton, Button, IntVar, StringVar
 from tkinter.messagebox import askyesnocancel, showerror
 from tkinter.filedialog import asksaveasfilename, askopenfilename, askdirectory
 from tkinter.colorchooser import askcolor
+from tkinter.ttk import Combobox
 
 # tab manager
 import librairies.editors.notebookclose as notebook
@@ -24,6 +25,7 @@ import librairies.editors.nbtviewer as renderer
 import librairies.editors.treeview as explorer
 
 # other
+import os
 from os import path
 from distutils.dir_util import copy_tree
 import keyboard
@@ -33,12 +35,12 @@ from multiprocessing import Process
 
 
 class e_file(Enum):
-    FUNCTION = 0  # widget_mcfunction.py      >> command
-    TEXTURE = 1  # widget_paint.py           >> paint
-    NBT = 2  # nbtviewer.py              >> renderer
+    FUNCTION = 0  # widget_mcfunction.py   >> command
+    TEXTURE = 1  # widget_paint.py         >> paint
+    NBT = 2  # nbtviewer.py                >> renderer
     SOUND = 3  # widget_audio_player.py    >> audioplayer
     JSON = 4  #
-    TXT = 5  # widget_notepad.py         >> notepad
+    TXT = 5  # widget_notepad.py           >> notepad
 
 
 class window:
@@ -48,7 +50,7 @@ class window:
 
     def __init__(self) -> None:
         """ Initialize the main window of the IDE """
-        self.parameters = {}
+        self.model_rendered = 'voxel'
         self.files = []
         self.can_noone = False
 
@@ -79,6 +81,9 @@ class window:
         self.parameters = self.init_parameters()
         self.parameters_object = {}
         self.parameters_window = None
+
+        self.project_window = None
+        self.project_object = {}
 
         # create new file
         self.new_file(e_file.TXT)
@@ -324,7 +329,7 @@ class window:
         elif not self.can_noone:
             self.new_file(e_file.TXT)
 
-    def create_instance(self, item: e_file, filepath=None):
+    def create_instance(self, item: e_file, filepath: str = None):
         """
         Create a new instance with file item type
         Args:
@@ -399,7 +404,7 @@ class window:
         if filepath != '':
             if item == e_file.NBT:
                 # launch viewer in another process to not block tkinter mainloop
-                process = Process(target=renderer.display_nbt_file, args=[filepath])
+                process = Process(target=renderer.display_nbt_file, args=[filepath, self.model_rendered, self.PROJECT_DATA])
                 process.start()
                 return None
 
@@ -524,16 +529,53 @@ class window:
 
     # region project management
 
+    def get_location(self):
+        dir = askdirectory(title='Select root directory')
+
+        self.project_object['location'].delete(0, 'end')
+        self.project_object['location'].insert(0, dir)
+
+
     def new_project(self) -> None:
         """ close previous project and create a new project """
-        dirpath = askdirectory(title='Open Project')
-        if dirpath == '':
-            self.new_file(e_file.TXT)
-            return
+
+        self.project_window = Toplevel(self.root)
+        self.project_window.title('New Datapack')
+        self.project_window.iconbitmap('assets/icon_v2.ico')
+        self.project_window.grab_set()
+
+        Label(self.project_window, text='Name: ').grid(row=0, column=0, sticky='nsew')
+        self.project_object['name'] = StringVar()
+        self.project_object['name'].set('default')
+        Entry(self.project_window, textvariable=self.project_object['name']).grid(row=0, column=1, columnspan=2, sticky='nsew')
+
+        Label(self.project_window, text='Location: ').grid(row=1, column=0, sticky='nsew')
+        self.project_object['location'] = Entry(self.project_window)
+        self.project_object['location'].grid(row=1, column=1, sticky='nsew')
+        Button(self.project_window, text='Browse', command=self.get_location).grid(row=1, column=2, sticky='nsew')
+
+        Label(self.project_window, text='', height=1).grid(row=2, column=0, sticky='nsew')
+        Button(self.project_window, text='Create', command=self.creation_project).grid(row=3, column=0, columnspan=3, sticky='nsew')
+
+        self.project_window.geometry(f"250x100+"
+                                        f"{self.root.winfo_x() + self.root.winfo_width()//2 - 125}+"
+                                        f"{self.root.winfo_y() + self.root.winfo_height()//2 - 25}")
+        self.project_window.resizable(width=False, height=False)
+
+    def creation_project(self):
+        dirpath = self.project_object['location'].get()
+
+        if not path.isdir(dirpath):
+            showerror(title='Location Error', message="Given location doesn't exists, please verify")
+            return None
 
         self.can_noone = True
         self.close_project()
         self.can_noone = False
+
+        dirpath = path.join(dirpath, self.project_object['name'].get())
+        if not path.exists(dirpath):
+            os.makedirs(dirpath)
 
         # create template datapack
         copy_tree(self.PROJECT_TEMPLATE, dirpath)
@@ -547,6 +589,9 @@ class window:
 
         # open pack.mcmeta
         self.open_file(e_file.TXT, path.join(dirpath, 'pack.mcmeta'))
+
+        self.project_window.destroy()
+        self.project_window = None
 
     def open_project(self) -> None:
         """ Save current project, then ask for a new one """
@@ -653,8 +698,16 @@ class window:
         Checkbutton(self.parameters_window, anchor='center', variable=self.parameters_object['fn_check'],
                     onvalue=True, offvalue=False).grid(row=row + 1, column=1, sticky='nsew')
 
+        Label(self.parameters_window, text='Version').grid(row=row + 2, column=0, sticky='nsew')
+        data_path = path.join(self.PROJECT_DATA, 'command_version')
+        versions = tuple([folder for folder in os.listdir(data_path) if path.isdir(path.join(data_path, folder))])
+        self.parameters_object['fn_version'] = StringVar()
+        self.parameters_object['fn_version'].set(data['version'])
+        Combobox(self.parameters_window, textvariable=self.parameters_object['fn_version'],
+                 values=versions, state='readonly').grid(row=row+1, column=1, sticky='nsew')
+
         # paint
-        row += 2
+        row += 3
         Label(self.parameters_window, text='', width=2, height=1).grid(row=row, column=2, sticky='nsew')
         self.parameters_window.rowconfigure(row, weight=0)
         row += 1
@@ -669,6 +722,22 @@ class window:
                        bg=askcolor(color=self.parameters_object['pt_background']['background'])[1])))
         self.parameters_object['pt_background'].grid(row=row+1, column=1, sticky='nsew')
 
+        # renderer
+        row += 2
+        Label(self.parameters_window, text='', width=2, height=1).grid(row=row, column=2, sticky='nsew')
+        self.parameters_window.rowconfigure(row, weight=0)
+        row += 1
+        data = self.parameters['renderer']
+        Label(self.parameters_window, text='RENDERER').grid(row=row, column=0, columnspan=2, sticky='nsew')
+        self.parameters_window.rowconfigure(row, weight=0)
+
+        Label(self.parameters_window, text='Type').grid(row=row+1, column=0, sticky='nsew')
+        self.parameters_object['rd_type'] = StringVar()
+        self.parameters_object['rd_type'].set(data['type'])
+        Combobox(self.parameters_window, textvariable=self.parameters_object['rd_type'],
+                 values=('voxel', 'opengl'), state='readonly').grid(row=row+1, column=1, sticky='nsew')
+        self.parameters_object['pt_background'].grid(row=row+1, column=1, sticky='nsew')
+
         # end button
         row += 2
         Label(self.parameters_window, text='', width=2, height=1).grid(row=row, column=2, sticky='nsew')
@@ -676,9 +745,9 @@ class window:
         Button(self.parameters_window, text='Apply', command=self.save_parameters).grid(row=row+1, column=0,
                                                                                         columnspan=3, sticky='nsew')
 
-        self.parameters_window.geometry(f"250x300+"
+        self.parameters_window.geometry(f"250x350+"
                                         f"{self.root.winfo_x() + self.root.winfo_width()//2 - 125}+"
-                                        f"{self.root.winfo_y() + self.root.winfo_height()//2 - 150}")
+                                        f"{self.root.winfo_y() + self.root.winfo_height()//2 - 175}")
         self.parameters_window.resizable(width=False, height=False)
 
     def save_parameters(self):
@@ -688,7 +757,9 @@ class window:
             self.parameters['audioplayer']['bar_count'] = self.parameters_object['ap_count'].get()
             self.parameters['audioplayer']['db_ceiling'] = self.parameters_object['ap_ceiling'].get()
             self.parameters['function']['auto_check'] = self.parameters_object['fn_check'].get()
+            self.parameters['function']['version'] = self.parameters_object['fn_version'].get()
             self.parameters['paint']['default_bg'] = self.parameters_object['pt_background']['background']
+            self.parameters['renderer']['type'] = self.parameters_object['rd_type'].get()
 
             self.parameters_window.destroy()
             self.parameters_window = None
@@ -709,7 +780,9 @@ class window:
         Waveform.bar_count = param['audioplayer']['bar_count']
         Waveform.db_ceiling = param['audioplayer']['db_ceiling']
         command.AUTO_CHECK = param['function']['auto_check']
+        command.VERSION = param['function']['version']
         paint.DEFAULT_BG = param['paint']['default_bg']
+        self.model_rendered = param['renderer']['type']
 
         return param
 

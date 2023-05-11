@@ -23,7 +23,7 @@ class data:
         self.data = {}
 
     def load(self, filename):
-        file = open(path.join(self.DATA_PATH, 'command', self.version, '%s.json' %(filename)))
+        file = open(path.join(self.DATA_PATH, 'command_version', self.version, '%s.json' %(filename)))
         self.data[filename] = json.load(file)
 
         file.close()

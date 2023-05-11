@@ -1,40 +1,28 @@
 ##### FINISH
 ~~~~~ IN PROGRESS
 
-ARCHITECTURE:
-##### only one result class
-##### parent class for all editors (that is in a frame)
+https://www.planetminecraft.com/mod/program-mcdatapacker-a-datapack-editor/
 
 EDITOR:
-##### .nbt 3d renderer
-##### .ogg sound viewer
-##### .txt
-##### .mcfunction
-##### .png
     .json editor >> .mcmeta
     .lang file
     file editor auto-completion
-##### default editor to open file
-
-PROJECT:
-##### open >> save precedent project, file dialog to choose root file, detect if datapack (with .mcmeta)
-##### create >> save precedent project, file dialog to choose location, create base directory with pack.mcmeta and pack.png
-##### add file >> choose type and location, open it
+    loot_tables editor >> .json file in "loot_tables" directory
+    predicate
+    recipe
 
 PARAMETERS:
-##### audio_player:
-#####   PLAY_ON_OPEN
-#####   LINE_WIDTH
-#####   bar_count
-#####   db_ceiling
-mcfunction:
-#####   AUTO_CHECK
-	change version
-##### paint:
-#####   DEFAULT_BG
     ? colors ?
     ? font ?
     ? reset param button for each if modified ?
+##### version function
+
+PROJECT:
+##### window for new project
+    can rename or create directory/file by right-clicking in treeview
+
+FUNCTION:
+    syntax highlighting
 
 DEBUGGER:
     tag debugger, see /prototype/Tag.xlsx

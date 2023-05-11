@@ -27,8 +27,6 @@ from random import choice
 import voxelmap as vxm
 import numpy as np
 
-DATA_PATH = path.join(path.dirname(__file__), 'data')
-
 #region 3D tools
 
 
@@ -326,16 +324,16 @@ def render_pyopengl(models: list[Model], display: tuple[int, int], size: tuple[i
         clock.tick(60)
 
 
-def render_block(blockname: str) -> None:
+def render_block(blockname: str, data_path: str) -> None:
     """
     Display a single block in a little window with PyOpenGl, data of the block must be in data/3D/
     Args:
         blockname (): name of the block to generate
     """
     # file path
-    path_model = path.join(DATA_PATH, '3D', 'models')
-    path_block = path.join(DATA_PATH, '3D', 'blocks')
-    path_textures = path.join(DATA_PATH, '3D', 'textures')
+    path_model = path.join(data_path, '3D', 'models')
+    path_block = path.join(data_path, '3D', 'blocks')
+    path_textures = path.join(data_path, '3D', 'textures')
 
     # get data
     with open(path.join(path_block, blockname + '.json')) as file:
@@ -473,7 +471,7 @@ def get_palette_color(palette: list[dict[str: dict | str]], reference: dict[str:
 #region display function
 
 
-def display_pyopengl(filepath: str) -> None:
+def display_pyopengl(filepath: str, data_path: str) -> None:
     """
     Render a .nbt file with PyOpenGl and PyGame, block data must be in 'data/3D',
     inexistent blocks will be replaced with debug block
@@ -481,9 +479,9 @@ def display_pyopengl(filepath: str) -> None:
         filepath (): relative or absolute path to the .nbt file
     """
     # path file to data
-    path_model = path.join(DATA_PATH, '3D', 'models')
-    path_block = path.join(DATA_PATH, '3D', 'blocks')
-    path_textures = path.join(DATA_PATH, '3D', 'textures')
+    path_model = path.join(data_path, '3D', 'models')
+    path_block = path.join(data_path, '3D', 'blocks')
+    path_textures = path.join(data_path, '3D', 'textures')
 
     # retrieve data from file
     size, blocks, palette = get_nbt_data(filepath)
@@ -598,7 +596,7 @@ def display_voxel(filepath: str) -> None:
 #endregion
 
 
-def display_nbt_file(filepath: str, model_type: str = 'voxel') -> None:
+def display_nbt_file(filepath: str, model_type: str = 'voxel', data_path: str = '') -> None:
     """
     Display a view of a .nbt file in a window dedicated, can choose between voxel or textured view
     Args:
@@ -609,7 +607,7 @@ def display_nbt_file(filepath: str, model_type: str = 'voxel') -> None:
     if model_type == 'voxel':
         display_voxel(filepath)
     elif model_type == 'opengl':
-        display_pyopengl(filepath)
+        display_pyopengl(filepath, data_path)
 
 
 if __name__ == "__main__":
@@ -622,4 +620,4 @@ if __name__ == "__main__":
     display_nbt_file('../../temp/mouv.nbt')
 
     for i in b:
-        render_block(i)
+        render_block(i, path.join(path.dirname(__file__), 'data'))

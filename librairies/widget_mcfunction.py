@@ -49,12 +49,14 @@ def is_comment(line):
 
 class Widget_mcfunction(Widget):
     AUTO_CHECK = True
+    VERSION = '1.19.2'
 
     STYLESHEET = path.join(path.dirname(__file__), 'data', 'style', 'text.json')
     DATASHEET = path.join(path.dirname(__file__), 'data', 'style', 'data.json')
 
     def __init__(self, *args, **kwargs):
         filepath = kwargs.pop('filepath', None)
+        self.debug = debugger(kwargs.pop('version', self.VERSION))
 
         Widget.__init__(self, *args, **kwargs)
 
@@ -99,10 +101,6 @@ class Widget_mcfunction(Widget):
         self.display_error.config(font=fontUse)
 
         # debug variable
-        if 'version' in kwargs.keys():
-            self.debug = debugger(kwargs['version'])
-        else:
-            self.debug = debugger('1.19.2')
         self.debugList = [Result()]
 
         # colors
