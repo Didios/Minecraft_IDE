@@ -793,5 +793,3 @@ class window:
 if __name__ == '__main__':
     app = window()
     app.open_window()
-
-    print("test")
